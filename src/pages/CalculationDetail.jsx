@@ -71,7 +71,6 @@ export default function CalculationDetail() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -137,7 +136,6 @@ export default function CalculationDetail() {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-6 space-y-6">
-        {/* Summary Card */}
         <div className="bg-primary text-white rounded-2xl p-8 shadow-lg">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div>
@@ -159,7 +157,6 @@ export default function CalculationDetail() {
           </div>
         </div>
 
-        {/* Semester Breakdown */}
         {calc.semesters?.map((semester, idx) => {
           const semesterCredits =
             semester.courses?.reduce(

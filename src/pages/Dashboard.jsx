@@ -143,7 +143,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -223,7 +222,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* History Grid */}
         {filteredHistory.length === 0 ? (
           <div className="bg-white rounded-xl shadow-sm border p-12 text-center">
             <GraduationCap size={48} className="mx-auto text-gray-300 mb-4" />
@@ -268,7 +266,6 @@ export default function Dashboard() {
                       </span>
                     </div>
 
-                    {/* Student Info */}
                     {calc.studentName && (
                       <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
                         <User size={14} />
