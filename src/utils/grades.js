@@ -69,16 +69,19 @@ export const getSemesterType = (semesterIndex) => {
 
 export const calculateYearUnits = (semesters, year) => {
   const startIdx = (year - 1) * 2;
-  const endIdx = startIdx + 2;
-  let total = 0;
+  const endIdx = Math.min(startIdx + 2, semesters.length);
 
-  for (let i = startIdx; i < endIdx && i < semesters.length; i++) {
-    total += (semesters[i].courses || []).reduce(
-      (sum, c) => sum + (Number(c.credits) || 0),
+  return semesters
+    .slice(startIdx, endIdx)
+    .reduce(
+      (total, semester) =>
+        total +
+        (semester.courses || []).reduce(
+          (sum, c) => sum + (Number(c.credits) || 0),
+          0,
+        ),
       0,
     );
-  }
-  return total;
 };
 
 export const calculateYearGPA = (semesters, year, scale = "4.0") => {
